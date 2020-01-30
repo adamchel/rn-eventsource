@@ -25,7 +25,7 @@
 
 'use strict';
 
-import { EventTarget } from 'event-target-shim';
+import EventTarget from 'event-target-shim';
 import { Networking } from 'react-native';
 
 const EVENT_SOURCE_EVENTS = ['error', 'message', 'open'];
