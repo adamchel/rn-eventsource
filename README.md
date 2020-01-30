@@ -5,7 +5,7 @@ This package that implements the [EventSource](https://developer.mozilla.org/en-
 There are several `EventSource` polyfills today, but none of them satisfy the following three goals:
 
 * Don't depend on the Node.js standard library
-    - The Node.js standard library isn't supported by React Native
+    - The Node.js standard library isn't supported by React Native.
 * Don't depend on a native module
     - This makes it harder to work with simple Expo-based apps.
 * Don't implement with XmlHttpRequest
