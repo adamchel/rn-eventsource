@@ -80,7 +80,7 @@ describe('EventSource', function() {
   let handleMessage;
   let handleError;
 
-  let requestIdCounter = 0;
+  let requestIdCounter = 1;
 
   const testUrl = 'https://www.example.com/sse';
 
@@ -233,10 +233,7 @@ describe('EventSource', function() {
       testUrl,
     );
 
-    const oldRequestId = requestId;
-    incrementRequestId();
-
-    eventSource.__didCompleteResponse(oldRequestId, null, false);
+    eventSource.__didCompleteResponse(requestId, null, false);
 
     // state should be still connecting, but another request
     // should have been sent with the new redirect URL
