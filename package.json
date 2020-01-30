@@ -1,0 +1,32 @@
+{
+  "name": "rn-eventsource",
+  "version": "0.0.1",
+  "description": "An EventSource implementation built on top of React Native's low-level Networking API",
+  "main": "lib/EventSource.js",
+  "scripts": {
+    "build": "babel src/ -d lib/ --ignore '**/__tests__'",
+    "prepare": "npm run build",
+    "test": "jest src",
+    "flow": "flow"
+  },
+  "author": "Adam Chelminski",
+  "license": "MIT",
+  "peerDependencies": {
+    "react-native": "^0.62.0-rc.1"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.8.3",
+    "@babel/core": "^7.8.3",
+    "@babel/plugin-proposal-class-properties": "^7.8.3",
+    "@babel/preset-env": "^7.8.3",
+    "@babel/preset-flow": "^7.8.3",
+    "babel-jest": "^25.1.0",
+    "babel-plugin-transform-flow-strip-types": "^6.22.0",
+    "flow-bin": "^0.117.0",
+    "jest": "^25.1.0",
+    "react-native": "^0.62.0-rc.1"
+  },
+  "dependencies": {
+    "event-target-shim": "^5.0.1"
+  }
+}
