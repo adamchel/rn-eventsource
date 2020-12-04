@@ -375,7 +375,7 @@ class EventSource extends (EventTarget(...EVENT_SOURCE_EVENTS): any) {
 
     if (
       responseHeaders &&
-      responseHeaders['content-type'] !== 'text/event-stream'
+      responseHeaders['content-type'].split(";").shift() !== 'text/event-stream'
     ) {
       this.dispatchEvent({
         type: 'error',
