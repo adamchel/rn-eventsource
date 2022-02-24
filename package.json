@@ -1,5 +1,5 @@
 {
-  "name": "rn-eventsource",
+  "name": "rn-eventsource-mercure",
   "version": "1.0.1",
   "description": "An EventSource implementation built on top of React Native's low-level Networking API",
   "repository": {
