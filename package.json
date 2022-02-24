@@ -1,10 +1,10 @@
 {
   "name": "rn-eventsource",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "An EventSource implementation built on top of React Native's low-level Networking API",
   "repository": {
     "type": "git",
-    "url": "https://github.com/adamchel/rn-eventsource.git"
+    "url": "https://github.com/Thorin0ak/rn-eventsource-mercure.git"
   },
   "main": "lib/EventSource.js",
   "scripts": {
@@ -13,7 +13,7 @@
     "test": "jest src",
     "flow": "flow"
   },
-  "author": "Adam Chelminski",
+  "author": "Adam Chelminski and Philippe Camus",
   "license": "MIT",
   "peerDependencies": {
     "react-native": "^0.62.0-rc.1"
