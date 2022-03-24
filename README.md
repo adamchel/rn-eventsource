@@ -1,8 +1,8 @@
-# rn-eventsource
+# rn-eventsource-mercure
 
 This package that implements the [EventSource](https://developer.mozilla.org/en-US/docs/Web/API/EventSource) web standard using low-level React Native networking primitives.
 
-There are several `EventSource` polyfills today, but none of them satisfy the following three goals:
+There are several `EventSource` polyfills today, as highlighted in [this post](http://ngineering.io/2022/03/19/state-of-react-native-sse-client-libraries/), but none of them satisfy the following three goals:
 
 * Don't depend on the Node.js standard library
     - The Node.js standard library isn't supported by React Native.

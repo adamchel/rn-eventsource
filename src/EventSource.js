@@ -164,8 +164,7 @@ class EventSource extends (EventTarget(...EVENT_SOURCE_EVENTS): any) {
     }
 
     if (this._lastEventId) {
-      // this._headers['Last-Event-ID'] = this._lastEventId;
-      this._headers = Object.assign({}, this._headers, {'LastEvent-ID': this._lastEventId});
+      this._headers = Object.assign({}, this._headers, {'Last-Event-ID': this._lastEventId});
     }
 
     Networking.sendRequest(
