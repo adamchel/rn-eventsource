@@ -1,18 +1,5 @@
 name: build
-on:
-  push:
-    branches:
-      - main
-    tags:
-      - '!*' # Do not execute on tags
-    paths:
-      - src/*
-      - test/*
-      - '*.json'
-      - package-lock.json
-  pull_request:
-    paths:
-      - '!*.MD'
+on: [push]
 jobs:
   test:
     strategy:
