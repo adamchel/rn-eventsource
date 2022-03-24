@@ -12,7 +12,7 @@ jobs:
       - run: npm install
       - run: npm run prepare
       - run: npm run test
-      - uses: paambaati/codeclimate-action@v3.0.0
+      - uses: paambaati/codeclimate-action@v2.7.1
         env:
           CC_TEST_REPORTER_ID: 5ede0a900f5c39541d23f4a8e1f909ba3420d81828ae2b6543f0d9ba75e8551b
         with:
