@@ -1,3 +1,7 @@
+[![Maintainability](https://api.codeclimate.com/v1/badges/0bd4a598dfee9b700e30/maintainability)](https://codeclimate.com/github/Thorin0ak/rn-eventsource-mercure/maintainability)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
+
+
 # rn-eventsource-mercure
 
 This package that implements the [EventSource](https://developer.mozilla.org/en-US/docs/Web/API/EventSource) web standard using low-level React Native networking primitives.
