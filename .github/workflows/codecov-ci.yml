@@ -1,8 +1,5 @@
 name: build
-on:
-  pull_request:
-    branches:
-    - main
+on: [push]
 jobs:
   test:
     name: Test & publish code coverage
