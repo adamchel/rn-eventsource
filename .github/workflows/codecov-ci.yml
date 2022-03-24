@@ -2,7 +2,7 @@ name: build
 on:
   push:
     branches:
-      - master
+      - main
     tags:
       - '!*' # Do not execute on tags
     paths:
@@ -22,8 +22,8 @@ jobs:
     name: test/node ${{ matrix.node }}/${{ matrix.platform }}
     runs-on: ${{ matrix.platform }}
     steps:
-      - uses: actions/checkout@master
-      - uses: actions/setup-node@master
+      - uses: actions/checkout@main
+      - uses: actions/setup-node@main
         with:
           node-version: ${{ matrix.node }}
       - run: npm install
