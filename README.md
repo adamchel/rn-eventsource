@@ -18,12 +18,12 @@ Thanks to the low-level network primitives exposed in React Native 0.62, it beca
 Install the package in your React Native project with:
 
 ```bash
-npm install --save rn-eventsource
+npm install --save rn-eventsource-mercure
 ```
 
 To import the library in your project:
 ```js
-const EventSource = require('rn-eventsource');
+const EventSource = require('rn-eventsource-mercure');
 ```
 
 Once imported, you can use it like any other `EventSource`. See the [MDN Documentation](https://developer.mozilla.org/en-US/docs/Web/API/EventSource) for more usage examples.
