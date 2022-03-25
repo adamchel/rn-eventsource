@@ -1,0 +1,10 @@
+name: Publish to npm registry
+on:
+  pull_request:
+    types:
+      - closed
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "The job is triggered"
