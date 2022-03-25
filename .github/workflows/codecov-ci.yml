@@ -1,8 +1,12 @@
-name: build
+name: Test & publish code coverage
+
 on: [push]
+
+env:
+  CC_TEST_REPORTER_ID: ${{ secrets.CC_TEST_REPORTER_ID }}
+
 jobs:
   test:
-    name: Test & publish code coverage
     runs-on: 'ubuntu-latest'
     steps:
       - uses: actions/checkout@v3.0.0
@@ -10,11 +14,10 @@ jobs:
         with:
           node-version: '16.x'
       - run: npm install
-      - run: npm run prepare
       - run: npm run test
       - uses: paambaati/codeclimate-action@v2.7.1
         env:
-          CC_TEST_REPORTER_ID: 5ede0a900f5c39541d23f4a8e1f909ba3420d81828ae2b6543f0d9ba75e8551b
+          CC_TEST_REPORTER_ID: ${CC_TEST_REPORTER_ID}
         with:
           coverageCommand: npm run test --coverage
-    
+
