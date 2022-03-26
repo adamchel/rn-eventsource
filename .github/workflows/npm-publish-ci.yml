@@ -22,12 +22,11 @@ jobs:
       - run: npm install
       - run: npm build
       - name: version and publish
-          run: |
-            npm version minor --force -m "Version %s"
-            npm set //registry.npmjs.org/:_authToken $NPM_TOKEN
-            npm publish
-          env:
-            CI: true
-            NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-            - name: Push release commit and tag to GitHub
-              run: git push gh-origin HEAD:main --tags
+        run: |
+          npm version minor --force -m "Version %s"
+          npm set //registry.npmjs.org/:_authToken $NPM_TOKEN
+          npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+      - name: Push release commit and tag to GitHub
+        run: git push gh-origin HEAD:main --tags
