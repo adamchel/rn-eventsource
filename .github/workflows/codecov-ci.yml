@@ -1,10 +1,5 @@
 name: Test & publish code coverage
-
 on: [push]
-
-env:
-  CC_TEST_REPORTER_ID: ${{ secrets.CC_TEST_REPORTER_ID }}
-
 jobs:
   test:
     runs-on: 'ubuntu-latest'
@@ -17,7 +12,7 @@ jobs:
       - run: npm run test
       - uses: paambaati/codeclimate-action@v2.7.1
         env:
-          CC_TEST_REPORTER_ID: ${CC_TEST_REPORTER_ID}
+          CC_TEST_REPORTER_ID: ${{ secrets.CC_TEST_REPORTER_ID }}
         with:
           coverageCommand: npm run test --coverage
 

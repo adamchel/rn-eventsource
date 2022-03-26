@@ -1,10 +1,33 @@
 name: Publish to npm registry
 on:
   pull_request:
-    types:
-      - closed
+    types: [closed]
 jobs:
-  publish:
+  build:
     runs-on: ubuntu-latest
+    if: github.event.pull_request.merged
     steps:
-      - run: echo "The job is triggered"
+      - uses: actions/checkout@3.0.0
+        with:
+          ref: refs/head/main
+      - run: |
+          git config user.name $GITHUB_ACTOR
+          git config user.email gh-actions-${GITHUB_ACTOR}@github.com
+          git remote add gh-origin https://${GITHUB_ACTOR}:${{ secrets.GITHUB_TOKEN }}@github.com/${GITHUB_REPOSITORY}.git
+      # Setup .npmrc to publish to npm
+      - uses: actions/setup-node@v3.0.0
+        with:
+          node-version: '16.x'
+          registry-url: 'https://registry.npmjs.org'
+      - run: npm install
+      - run: npm build
+      - name: version and publish
+          run: |
+            npm version minor --force -m "Version %s"
+            npm set //registry.npmjs.org/:_authToken $NPM_TOKEN
+            npm publish
+          env:
+            CI: true
+            NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+            - name: Push release commit and tag to GitHub
+              run: git push gh-origin HEAD:main --tags
